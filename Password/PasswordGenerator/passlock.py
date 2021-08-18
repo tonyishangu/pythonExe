@@ -12,4 +12,5 @@ class User:
     def saveUser (self):
         User.user_list.append(self)
 
-    d
+    def deleteUser (self):
+        User.user_list.remove(self)
