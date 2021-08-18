@@ -31,4 +31,5 @@ class Credentials:
     def save (self):
         Credentials.credentials.append(Self)
 
-    
+    def delete (self):
+        Credentials.credentials.remove(self)
