@@ -29,7 +29,7 @@ class Credentials:
         self.password = password
 
     def save (self):
-        Credentials.credentials.append(Self)
+        Credentials.credentials.append(self)
 
     def delete (self):
         Credentials.credentials.remove(self)

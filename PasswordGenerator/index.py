@@ -16,16 +16,18 @@ def login_user(username, password):
     check_users=Credentials.verify_user(username, password)
     return check_users
 
-def create_new_credentials(acount, userName, password):
-    new_credentials=Credentials(acount, userName, password)
+def create_new_credentials(account, userName, password):
+    new_credentials=Credentials(account, userName, password)
     return new_credentials
 
 def save_credentials(credentials):
     credentials.save_details()
 
-def display_acount_details():
+def display_account_details():
     return Credentials.display_credentials()
 
 def delete_credentials(credentials):
     credentials.delete_credentials()
 
+def find_credentials(account):
+    return Credentials.find_credential(account)
