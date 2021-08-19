@@ -1,4 +1,5 @@
 # from Password.interface import check_credendtials
+# from Password.interface import passlocker
 from passlock import User, Credentials
 
 def create_new_user(username,password):
@@ -38,3 +39,19 @@ def check_credentials(account):
 def generate_password():
     auto_password = Credentials.generatePassword()
     return auto_password
+
+def copy_password(account):
+    return Credentials.copy_password(account)
+
+def passwordlocker():
+    print("Welcome to Passlocker..\n Select one of the following to proceed\n CA to create an new account\n LN to login to your Account")
+    short_code=input("").lower().strip()
+    if short_code == "ca":
+        print("Sign Up")
+        print('*' * 20)
+        username = input("User_name: ")
+
+
+
+if __name__ == '__main__':
+    passwordlocker()
