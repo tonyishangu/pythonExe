@@ -1,4 +1,4 @@
-from _typeshed import Self
+# from _typeshed import Self
 import random
 import string
 import pyperclip
@@ -23,9 +23,9 @@ class User:
 class Credentials:
     credentials = []
 
-    def __init__ (self, account,username,password):
+    def __init__ (self, account,userName,password):
         self.account = account
-        self.username = username
+        self.username = userName
         self.password = password
 
     def save (self):
