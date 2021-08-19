@@ -1,4 +1,4 @@
-from Password.interface import check_credendtials
+# from Password.interface import check_credendtials
 from passlock import User, Credentials
 
 def create_new_user(username,password):
@@ -15,3 +15,7 @@ def login_user(username, password):
 
     check_users=Credentials.verify_user(username, password)
     return check_users
+
+def create_new_credentials(acount, userName, password):
+    new_credentials=Credentials(acount, userName, password)
+    return new_credentials
