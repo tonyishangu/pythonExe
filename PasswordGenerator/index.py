@@ -19,3 +19,6 @@ def login_user(username, password):
 def create_new_credentials(acount, userName, password):
     new_credentials=Credentials(acount, userName, password)
     return new_credentials
+
+def save_credentials(credentials):
+    credentials.save_details()
