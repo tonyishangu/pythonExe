@@ -22,3 +22,6 @@ def create_new_credentials(acount, userName, password):
 
 def save_credentials(credentials):
     credentials.save_details()
+
+def display_acount_details():
+    return Credentials.display_credentials()
