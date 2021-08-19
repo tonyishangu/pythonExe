@@ -34,3 +34,7 @@ def find_credentials(account):
 
 def check_credentials(account):
     return Credentials.if_credential_exist(account)
+
+def generate_password():
+    auto_password = Credentials.generatePassword()
+    return auto_password
