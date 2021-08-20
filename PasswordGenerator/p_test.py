@@ -18,6 +18,10 @@ class TestCredentials(unittest.TestCase):
     def setUp(self):
         self.new_credential = Credentials('Gmail','Tony_ishangu','yx5Gij43')
 
+    def test_init(self):
+        self.assertEqual(self.new_credential.account,'Gmail')
+        self.assertEqual(self.new_credential.username,'Tony_ishangu')
+        self.assertEqual(self.new_credential.password,'yx5Gij43')
 
 if __name__ == "__main__":
     unittest.main()
