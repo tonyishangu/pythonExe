@@ -14,6 +14,10 @@ class TestClass(unittest.TestCase):
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)
 
+class TestCredentials(unittest.TestCase):
+    def setUp(self):
+        self.new_credential = Credentials('Gmail','Tony_ishangu','yx5Gij43')
+
 
 if __name__ == "__main__":
     unittest.main()
