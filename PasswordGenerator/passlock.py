@@ -10,7 +10,7 @@ class User:
         self.username = username
         self.password = password
 
-    def saveUser (self):
+    def save_user (self):
         User.user_list.append(self)
 
     @classmethod
@@ -21,18 +21,18 @@ class User:
         User.user_list.remove(self)
 
 class Credentials:
-    credentials = []
+    credentials_list = []
 
     def __init__ (self, account,userName,password):
         self.account = account
         self.username = userName
         self.password = password
 
-    def save (self):
-        Credentials.credentials.append(self)
+    def save_details(self):
+        Credentials.credentials_list.append(self)
 
     def delete (self):
-        Credentials.credentials.remove(self)
+        Credentials.credentials_list.remove(self)
 
     @classmethod
     def find_credential(cls, account):
