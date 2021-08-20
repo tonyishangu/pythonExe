@@ -27,6 +27,43 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_details()
         self.assertEqual(len(Credentials.credentials_list),1)
 
+    def tearDown(self):
+        Credentials.credentials_list = []
+
+    def test_save_many_accounts(self):
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","tonnieishangu","Mfh45hfk") 
+        test_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),2)
+
+    def test_delete_credential(self):
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","tonnieishangu","Mfh45hfk")
+        test_credential.save_details()
+
+        self.new_credential.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_find_credentialr(self):
+
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","tonnieishangu","Mfh45hfk") 
+        test_credential.save_details()
+
+        the_credential = Credentials.find_credential("Twitter")
+
+        self.assertEqual(the_credential.account,test_credential.account)
+
+    def test_credential_exist(self):
+        self.new_credential.save_details()
+        the_credential = Credentials("Twitter", "tonnieishangu", "Mfh45hfk")  
+        the_credential.save_details()
+        credential_is_found = Credentials.if_credential_exist("Twitter")
+        self.assertTrue(credential_is_found)
+
+    def test_display_all_saved_credentials(self):   
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
 
 if __name__ == "__main__":
     unittest.main()
