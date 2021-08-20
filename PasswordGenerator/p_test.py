@@ -41,7 +41,7 @@ class TestCredentials(unittest.TestCase):
         test_credential = Credentials("Twitter","tonnieishangu","Mfh45hfk")
         test_credential.save_details()
 
-        self.new_credential.delete_credentials()
+        self.new_credential.delete()
         self.assertEqual(len(Credentials.credentials_list),1)
 
     def test_find_credentialr(self):
